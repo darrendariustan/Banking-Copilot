@@ -1,0 +1,52 @@
+﻿texts,intents
+Could you tell me the balance in my savings account ending,Account Inquiries
+"Hi, I'd like to see my recent transactions for the past month. Can you show them to me?",Account Inquiries
+There's a charge on my account I don't recognize. It says 'ATM withdrawal NYC' but I haven't been there. Can you explain?,Account Inquiries
+I'm not sure what type of account I have. Could you tell me what kind it is and who the owner is on the account?,Account Inquiries
+"Hey, can I check my current balance?",Account Inquiries
+Can I pay my phone bill with the chatbot?,Transactions
+I'd like to schedule a payment of $100 for my internet bill on the 15th of next month.,Transactions
+"Hey, can I send some money to my friend Sarah Miller using her phone number?",Transactions
+s it possible to deposit a check using my phone camera?,Transactions
+I just received a large deposit. Can you verify it and make sure everything is alright?,Transactions
+"""Oops, I accidentally sent money to the wrong account number. Can you help me cancel it?",Transactions
+What are the different payment methods available for bill payments?,Transactions
+What are the fees associated with sending an international wire transfer?,Transactions
+I'm looking for ways to save money for a down payment on a house. Can you suggest some options?,Financial Management
+What are the different investment options available through your bank?,Financial Management
+'m planning a trip abroad. What are some tips for managing my finances while traveling?,Financial Management
+How do your savings account interest rates compare to other banks?,Financial Management
+What are some resources available to learn more about managing my finances?,Financial Management
+Can you explain the risks and benefits of investing in stocks?,Financial Management
+I lost my debit card. What should I do to report it and get a replacement?,Security
+"I noticed some suspicious activity on my account, like unrecognized login attempts.",Security
+What are the security measures your bank takes to protect customer information?,Security
+I just received a text message claiming to be from your bank. Is it legitimate?,Security
+Someone might have used my debit card without my permission. How can I dispute the charges?,Security
+I believe my account has been compromised. Can you help me recover it?,Security
+How can I contact a live representative for help?,Customer Service
+What are your customer service hours?,Customer Service
+I can't remember my online banking login credentials. How can I reset them?,Customer Service
+I'd like to update my contact information associated with my account.,Customer Service
+I'm not satisfied with the recent service I received from a customer service representative. How can I submit a complaint?,Customer Service
+I'm having trouble transferring money through the mobile app. Can you help?,Customer Service
+Transfer $100 from my savings account to my travel account,Money Transfer
+I need to move $50 from my checking to my savings,Money Transfer
+Can you transfer 200 dollars from my high-yield savings to my regular savings account?,Money Transfer
+Move money from my travel account to my checking account,Money Transfer
+I want to send $75 to my retirement account from my regular savings,Money Transfer
+Transfer funds between my accounts,Money Transfer
+I'd like to move some money between my accounts,Money Transfer
+Can you help me transfer $150 for rent expenses?,Money Transfer
+Please move $25 from my high-yield account for burger expenses,Money Transfer
+Transfer money to cover dinner expenses,Money Transfer
+What is my current savings rate based on my income and expenses chart?,Chart Analysis
+Can you analyze the balance trend chart and tell me if I'm saving enough money?,Chart Analysis
+What's my highest account balance in the last 90 days according to the chart?,Chart Analysis
+How much have I paid off on my mortgage based on the trend chart?,Chart Analysis
+What category am I spending the most money on according to the spending distribution?,Chart Analysis
+Based on the charts how much money should I be saving each month?,Chart Analysis
+Can you explain what the balance trend chart is showing me?,Chart Analysis
+How does my current savings rate compare to the recommended 20%?,Chart Analysis
+What does the mortgage trend chart indicate about my payment progress?,Chart Analysis
+In which month did I have the highest expenses according to the income vs expenses chart?,Chart Analysis

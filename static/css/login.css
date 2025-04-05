@@ -1,0 +1,129 @@
+/* Aleta's Banking Copilot - Login Styling */
+
+/* Main colors from logo */
+:root {
+  --primary-color: #0a2f54;  /* Navy blue from logo */
+  --secondary-color: #f4ecd8; /* Beige from logo */
+  --accent-color: #e87c3b; /* Orange from orange shirt in logo */
+  --text-color: #333333;
+  --light-text: #ffffff;
+  --error-color: #e74c3c;
+  --success-color: #2ecc71;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Login container styling */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  background-color: var(--secondary-color);
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+/* Logo styling */
+.login-logo {
+  max-width: 200px;
+  margin-bottom: 1.5rem;
+}
+
+/* Form styling */
+.login-form {
+  width: 100%;
+}
+
+.login-form .stSelectbox,
+.login-form .stTextInput {
+  margin-bottom: 1rem;
+}
+
+/* Custom login button */
+.login-button {
+  background-color: var(--primary-color);
+  color: var(--light-text);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+.login-button:hover {
+  background-color: #164b7e;
+  box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+/* Password field with show/hide toggle */
+.password-container {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: var(--primary-color);
+  opacity: 0.7;
+}
+
+.password-toggle:hover {
+  opacity: 1;
+}
+
+/* Error message styling */
+.login-error {
+  color: var(--error-color);
+  background-color: rgba(231, 76, 60, 0.1);
+  padding: 0.5rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Success message styling */
+.login-success {
+  color: var(--success-color);
+  background-color: rgba(46, 204, 113, 0.1);
+  padding: 0.5rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+/* "Remember me" checkbox styling */
+.remember-me {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.remember-me input {
+  margin-right: 0.5rem;
+}
+
+/* Sidebar title styling */
+.sidebar-title {
+  color: var(--primary-color);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+/* Animation for login transition */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.login-animation {
+  animation: fadeIn 0.3s ease-out;
+} 

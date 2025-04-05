@@ -1,0 +1,23 @@
+chatbot/
+.env
+
+# Ignore virtual environments
+.venv/
+env/
+
+# Ignore bytecode
+__pycache__/
+*.pyc
+
+# Ignore editor configs
+.vscode/
+
+# Ignore logs
+*.log
+
+# Ignore audio or binary files
+*.wav
+
+# Ignore OS junk
+.DS_Store
+Thumbs.db

@@ -1,0 +1,6 @@
+user_id,first_name,last_name,email,phone,address,city,state,zip,country,dob,join_date,last_login,status,risk_score,total_accounts,preferences,password
+USR001,Darren,Smith,darren.smith@email.com,+1-555-123-4567,123 Family St,Boston,MA,02108,USA,1975-03-15,2020-01-10,2025-04-01,active,medium,5,{paperless: true notifications: email language: english},darren001
+USR002,Maria,Smith,maria.smith@email.com,+1-555-987-6543,123 Family St,Boston,MA,02108,USA,1978-07-22,2020-01-10,2025-04-01,active,low,5,{paperless: true notifications: sms language: english},maria002
+USR003,Enric,Smith,enric.smith@email.com,+1-555-234-5678,123 Family St,Boston,MA,02108,USA,2000-05-10,2021-06-15,2025-03-30,active,high,4,{paperless: true notifications: email language: english},enric003
+USR004,Randy,Smith,randy.smith@email.com,+1-555-345-6789,45 College Ave,Cambridge,MA,02139,USA,1998-11-03,2020-08-20,2025-04-02,active,medium,4,{paperless: false notifications: email language: english},randy004
+USR005,Victor,Smith,victor.smith@email.com,+1-555-456-7890,123 Family St,Boston,MA,02108,USA,2005-09-28,2023-09-28,2025-04-01,active,low,4,{paperless: true notifications: push language: english},victor005

@@ -1,0 +1,31 @@
+payment_id,account_id,payee_name,amount,currency,frequency,next_date,end_date,category,status,description,payment_method
+PY1001,ACC001,Verizon Wireless,95.99,USD,monthly,2025-04-15,N/A,Bills & Utilities,active,Family Phone Plan,automatic
+PY1002,ACC001,Geico Insurance,175.50,USD,monthly,2025-04-05,N/A,Insurance,active,Family Auto Insurance,automatic
+PY1003,ACC001,Netflix,16.99,USD,monthly,2025-04-10,N/A,Subscriptions,active,Streaming Service,automatic
+PY1004,ACC001,Fitness Plus,49.99,USD,monthly,2025-04-20,N/A,Health & Fitness,active,Gym Membership - Darren,automatic
+PY1005,ACC005,Fitness Plus,49.99,USD,monthly,2025-04-20,N/A,Health & Fitness,active,Gym Membership - Maria,automatic
+PY1006,ACC021,Mortgage Lender,1865.75,USD,monthly,2025-04-01,2026-01-15,Housing,active,Family Mortgage Payment,automatic
+PY1007,ACC001,Power Electric Co,185.43,USD,monthly,2025-04-12,N/A,Bills & Utilities,active,Household Electricity,automatic
+PY1008,ACC001,City Water,78.25,USD,monthly,2025-04-15,N/A,Bills & Utilities,active,Water & Sewage,automatic
+PY1009,ACC004,Investment Advisor,150.00,USD,quarterly,2025-06-10,N/A,Financial Services,active,Retirement Account Management Fee,automatic
+PY1010,ACC008,Investment Advisor,150.00,USD,quarterly,2025-06-10,N/A,Financial Services,active,Retirement Account Management Fee,automatic
+PY1011,ACC001,Home Security,45.99,USD,monthly,2025-04-18,N/A,Home & Security,active,Home Security Monitoring,automatic
+PY1012,ACC005,Amazon Prime,14.99,USD,monthly,2025-04-22,N/A,Subscriptions,active,Amazon Prime Membership,automatic
+PY1013,ACC005,Disney+,7.99,USD,monthly,2025-04-14,N/A,Subscriptions,active,Streaming Service,automatic
+PY1014,ACC001,Internet Provider,89.99,USD,monthly,2025-04-17,N/A,Bills & Utilities,active,High-Speed Internet,automatic
+PY1015,ACC002,Travel Insurance,25.00,USD,monthly,2025-04-25,N/A,Insurance,active,Annual Travel Insurance,automatic
+PY1016,ACC006,Travel Insurance,25.00,USD,monthly,2025-04-25,N/A,Insurance,active,Annual Travel Insurance,automatic
+PY1017,ACC005,Grocery Delivery,12.99,USD,monthly,2025-04-05,N/A,Groceries,active,Grocery Delivery Subscription,automatic
+PY1018,ACC009,Spotify Student,4.99,USD,monthly,2025-04-08,N/A,Subscriptions,active,Music Streaming - Student Plan,automatic
+PY1019,ACC013,Campus Housing,850.00,USD,monthly,2025-04-01,2025-12-15,Housing,active,College Dorm Payment,automatic
+PY1020,ACC013,Meal Plan,450.00,USD,semester,2025-09-01,N/A,Food & Dining,active,College Meal Plan,automatic
+PY1021,ACC017,Mobile Game Sub,4.99,USD,monthly,2025-04-15,N/A,Entertainment,active,Mobile Gaming Subscription,automatic
+PY1022,ACC003,Property Tax,1250.00,USD,semi-annual,2025-06-15,N/A,Taxes,active,Property Tax Payment,automatic
+PY1023,ACC001,Landscaping Service,120.00,USD,monthly,2025-04-10,2025-10-10,Home & Garden,active,Lawn Maintenance,automatic
+PY1024,ACC004,Investment Contribution,500.00,USD,monthly,2025-04-05,N/A,Investments,active,Automatic Retirement Contribution,automatic
+PY1025,ACC008,Investment Contribution,500.00,USD,monthly,2025-04-05,N/A,Investments,active,Automatic Retirement Contribution,automatic
+PY1026,ACC012,Investment Contribution,100.00,USD,monthly,2025-04-05,N/A,Investments,active,Automatic Retirement Contribution,automatic
+PY1027,ACC016,Investment Contribution,200.00,USD,monthly,2025-04-05,N/A,Investments,active,Automatic Retirement Contribution,automatic
+PY1028,ACC020,Investment Contribution,50.00,USD,monthly,2025-04-05,N/A,Investments,active,Automatic Retirement Contribution,automatic
+PY1029,ACC011,College Savings,250.00,USD,monthly,2025-04-15,N/A,Education,active,College Fund Contribution,automatic
+PY1030,ACC015,Student Loan,325.00,USD,monthly,2025-04-10,2028-05-10,Education,active,Student Loan Payment,automatic

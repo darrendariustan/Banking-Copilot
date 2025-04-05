@@ -1,0 +1,103 @@
+transaction_id,account_id,date,description,category,amount,currency,balance_after,status,merchant_name,location,transaction_type
+TX1001,ACC001,2025-04-01 00:00:00,Family Groceries,Food & Dining,-215.75,USD,15245.32,completed,Whole Foods,Boston,debit
+TX1002,ACC001,2025-03-31 00:00:00,ATM Withdrawal,Cash & ATM,-100.0,USD,15461.07,completed,Bank ATM,Boston,withdrawal
+TX1003,ACC001,2025-03-30 00:00:00,Monthly Salary,Income,4250.0,USD,15561.07,completed,TechCorp Inc,Boston,deposit
+TX1004,ACC001,2025-03-28 00:00:00,Phone Bill Payment,Bills & Utilities,-95.99,USD,11311.07,completed,Verizon Wireless,,bill_payment
+TX1005,ACC001,2025-03-27 00:00:00,Gas Station,Transportation,-65.45,USD,11407.06,completed,Shell,Boston,debit
+TX1006,ACC001,2025-03-26 00:00:00,Home Improvement Store,Home & Garden,-145.32,USD,11472.51,completed,Home Depot,Boston,debit
+TX1007,ACC001,2025-03-25 00:00:00,Mortgage Payment,Housing,-1865.75,USD,11617.83,completed,Mortgage Lender,,bill_payment
+TX1008,ACC001,2025-03-25 00:00:00,Restaurant,Food & Dining,-85.43,USD,13483.58,completed,Olive Garden,Boston,debit
+TX1009,ACC001,2025-03-24 00:00:00,Sporting Goods,Shopping,-120.35,USD,13569.01,completed,REI,Boston,debit
+TX1010,ACC001,2025-03-23 00:00:00,Transfer to Savings,Transfers,-500.0,USD,13689.36,completed,Internal Transfer,,transfer
+TX1011,ACC001,2025-03-20 00:00:00,Grocery Shopping,Food & Dining,-185.94,USD,14189.36,completed,Stop & Shop,Boston,debit
+TX1012,ACC002,2025-04-01 00:00:00,Airline Tickets,Travel,-450.0,USD,3254.33,completed,Delta Airlines,,online
+TX1013,ACC002,2025-03-29 00:00:00,Restaurant,Food & Dining,-75.54,USD,3704.33,completed,Legal Sea Foods,Boston,debit
+TX1014,ACC002,2025-03-28 00:00:00,Transfer from Checking,Transfers,500.0,USD,3779.87,completed,Internal Transfer,,transfer
+TX1015,ACC002,2025-03-25 00:00:00,Hotel Booking,Travel,-350.0,USD,3279.87,completed,Marriott Hotels,,online
+TX1016,ACC003,2025-04-01 00:00:00,Interest Payment,Interest,66.32,USD,35210.5,completed,Bank Interest,,interest
+TX1017,ACC003,2025-03-30 00:00:00,Transfer from Checking,Transfers,1000.0,USD,35144.18,completed,Internal Transfer,,transfer
+TX1018,ACC003,2025-03-25 00:00:00,Property Tax Payment,Taxes,-1250.0,USD,34144.18,completed,City of Boston,,bill_payment
+TX1019,ACC004,2025-04-01 00:00:00,Investment Growth,Interest,245.5,USD,187500.45,completed,Investment Returns,,interest
+TX1020,ACC004,2025-03-25 00:00:00,Retirement Contribution,Investments,500.0,USD,187254.95,completed,Automatic Transfer,,transfer
+TX1021,ACC005,2025-04-01 00:00:00,Family Groceries,Food & Dining,-168.32,USD,8750.75,completed,Trader Joe's,Boston,debit
+TX1022,ACC005,2025-03-30 00:00:00,Monthly Salary,Income,3850.0,USD,8919.07,completed,Education Dept,Boston,deposit
+TX1023,ACC005,2025-03-28 00:00:00,Clothing Store,Shopping,-125.45,USD,5069.07,completed,Macy's,Boston,debit
+TX1024,ACC005,2025-03-25 00:00:00,Pharmacy,Health & Medical,-45.67,USD,5194.52,completed,CVS,Boston,debit
+TX1025,ACC005,2025-03-23 00:00:00,Restaurant,Food & Dining,-78.9,USD,5240.19,completed,Cheesecake Factory,Boston,debit
+TX1026,ACC006,2025-04-01 00:00:00,Travel Booking,Travel,-320.0,USD,5280.0,completed,Expedia,,online
+TX1027,ACC006,2025-03-29 00:00:00,Transfer from Checking,Transfers,400.0,USD,5600.0,completed,Internal Transfer,,transfer
+TX1028,ACC006,2025-03-25 00:00:00,Hotel Deposit,Travel,-200.0,USD,5200.0,completed,Hilton Hotels,,online
+TX1029,ACC007,2025-04-01 00:00:00,Interest Payment,Interest,79.25,USD,42150.25,completed,Bank Interest,,interest
+TX1030,ACC007,2025-03-30 00:00:00,Transfer from Checking,Transfers,750.0,USD,42071.0,completed,Internal Transfer,,transfer
+TX1031,ACC008,2025-04-01 00:00:00,Investment Growth,Interest,210.45,USD,165400.35,completed,Investment Returns,,interest
+TX1032,ACC008,2025-03-25 00:00:00,Retirement Contribution,Investments,500.0,USD,165189.9,completed,Automatic Transfer,,transfer
+TX1033,ACC009,2025-04-01 00:00:00,Fast Food,Food & Dining,-12.54,USD,2350.45,completed,McDonald's,Boston,debit
+TX1034,ACC009,2025-03-30 00:00:00,Part-time Job,Income,320.0,USD,2362.99,completed,Campus Bookstore,Boston,deposit
+TX1035,ACC009,2025-03-28 00:00:00,University Bookstore,Education,-85.78,USD,2042.99,completed,College Bookstore,Boston,debit
+TX1036,ACC009,2025-03-25 00:00:00,Coffee Shop,Food & Dining,-4.75,USD,2128.77,completed,Starbucks,Boston,debit
+TX1037,ACC009,2025-03-23 00:00:00,Electronics Store,Shopping,-65.99,USD,2133.52,completed,Best Buy,Boston,debit
+TX1038,ACC010,2025-04-01 00:00:00,Spring Break Trip,Travel,-350.0,USD,1875.2,completed,Florida Resorts,,online
+TX1039,ACC010,2025-03-29 00:00:00,Transfer from Savings,Transfers,200.0,USD,2225.2,completed,Internal Transfer,,transfer
+TX1040,ACC011,2025-04-01 00:00:00,Interest Payment,Interest,10.25,USD,5430.75,completed,Bank Interest,,interest
+TX1041,ACC011,2025-03-30 00:00:00,College Savings,Education,250.0,USD,5420.5,completed,Automatic Transfer,,transfer
+TX1042,ACC012,2025-04-01 00:00:00,Investment Growth,Interest,25.3,USD,12450.3,completed,Investment Returns,,interest
+TX1043,ACC012,2025-03-25 00:00:00,Retirement Contribution,Investments,100.0,USD,12425.0,completed,Automatic Transfer,,transfer
+TX1044,ACC013,2025-04-01 00:00:00,Campus Housing,Housing,-850.0,USD,3245.15,completed,University Housing,,bill_payment
+TX1045,ACC013,2025-03-30 00:00:00,Part-time Job,Income,450.0,USD,4095.15,completed,Campus Cafe,Boston,deposit
+TX1046,ACC013,2025-03-28 00:00:00,Textbooks,Education,-125.45,USD,3645.15,completed,College Bookstore,Cambridge,debit
+TX1047,ACC013,2025-03-25 00:00:00,Fast Food,Food & Dining,-15.75,USD,3770.6,completed,Chipotle,Cambridge,debit
+TX1048,ACC013,2025-03-23 00:00:00,Grocery Shopping,Food & Dining,-65.25,USD,3786.35,completed,Trader Joe's,Cambridge,debit
+TX1049,ACC014,2025-04-01 00:00:00,Spring Break Trip,Travel,-550.0,USD,4520.8,completed,Cancun Resorts,,online
+TX1050,ACC014,2025-03-29 00:00:00,Transfer from Savings,Transfers,300.0,USD,5070.8,completed,Internal Transfer,,transfer
+TX1051,ACC015,2025-04-01 00:00:00,Interest Payment,Interest,16.5,USD,8760.35,completed,Bank Interest,,interest
+TX1052,ACC015,2025-03-30 00:00:00,Student Loan Payment,Education,-325.0,USD,8743.85,completed,Loan Servicer,,bill_payment
+TX1053,ACC016,2025-04-01 00:00:00,Investment Growth,Interest,35.75,USD,18250.75,completed,Investment Returns,,interest
+TX1054,ACC016,2025-03-25 00:00:00,Retirement Contribution,Investments,200.0,USD,18215.0,completed,Automatic Transfer,,transfer
+TX1055,ACC017,2025-04-01 00:00:00,Video Game Purchase,Entertainment,-59.99,USD,875.25,completed,Game Store,Boston,debit
+TX1056,ACC017,2025-03-30 00:00:00,Allowance,Income,100.0,USD,935.24,completed,Family Transfer,,deposit
+TX1057,ACC017,2025-03-28 00:00:00,Fast Food,Food & Dining,-12.5,USD,835.24,completed,Burger King,Boston,debit
+TX1058,ACC017,2025-03-25 00:00:00,Movie Tickets,Entertainment,-18.5,USD,847.74,completed,AMC Theaters,Boston,debit
+TX1059,ACC017,2025-03-23 00:00:00,Mobile Game Purchase,Entertainment,-4.99,USD,866.24,completed,App Store,,online
+TX1060,ACC018,2025-04-01 00:00:00,Summer Camp Deposit,Travel,-150.0,USD,450.5,completed,Adventure Camp,,online
+TX1061,ACC018,2025-03-29 00:00:00,Transfer from Savings,Transfers,50.0,USD,600.5,completed,Internal Transfer,,transfer
+TX1062,ACC019,2025-04-01 00:00:00,Interest Payment,Interest,2.35,USD,1250.0,completed,Bank Interest,,interest
+TX1063,ACC019,2025-03-30 00:00:00,Transfer from Checking,Transfers,75.0,USD,1247.65,completed,Internal Transfer,,transfer
+TX1064,ACC020,2025-04-01 00:00:00,Investment Growth,Interest,5.0,USD,2500.0,completed,Investment Returns,,interest
+TX1065,ACC020,2025-03-25 00:00:00,Retirement Contribution,Investments,50.0,USD,2495.0,completed,Automatic Transfer,,transfer
+TX1066,ACC021,2025-04-01 00:00:00,Mortgage Payment,Housing,-1865.75,USD,243576.45,completed,Mortgage Lender,,bill_payment
+TX1067,ACC021,2025-03-01 00:00:00,Mortgage Payment,Housing,-1865.75,USD,245442.2,completed,Mortgage Lender,,bill_payment
+TX1068,ACC021,2025-02-01 00:00:00,Mortgage Payment,Housing,-1865.75,USD,247307.95,completed,Mortgage Lender,,bill_payment
+TX1069,ACC021,2025-01-01 00:00:00,Mortgage Payment,Housing,-1865.75,USD,249173.7,completed,Mortgage Lender,,bill_payment
+TX1070,ACC001,2025-03-18 00:00:00,Home Insurance,Insurance,-125.5,USD,14375.3,completed,Homeowners Insurance Co,,bill_payment
+TX1071,ACC001,2025-03-17 00:00:00,Auto Repair,Auto & Transport,-350.0,USD,14500.8,completed,Local Garage,Boston,debit
+TX1072,ACC001,2025-03-15 00:00:00,Family Dinner,Food & Dining,-120.75,USD,14850.8,completed,Outback Steakhouse,Boston,debit
+TX1073,ACC001,2025-03-12 00:00:00,School Supplies,Education,-85.45,USD,14971.55,completed,Office Depot,Boston,debit
+TX1074,ACC005,2025-03-20 00:00:00,Department Store,Shopping,-145.78,USD,5319.09,completed,Target,Boston,debit
+TX1075,ACC005,2025-03-18 00:00:00,Doctor Visit,Health & Medical,-35.0,USD,5464.87,completed,Medical Center,Boston,debit
+TX1076,ACC005,2025-03-15 00:00:00,Home Goods,Home & Garden,-95.75,USD,5499.87,completed,Bed Bath & Beyond,Boston,debit
+TX1077,ACC009,2025-03-20 00:00:00,Campus Events,Entertainment,-25.0,USD,2199.51,completed,University Events,Boston,debit
+TX1078,ACC009,2025-03-19 00:00:00,Lab Supplies,Education,-45.99,USD,2224.51,completed,University Store,Boston,debit
+TX1079,ACC013,2025-03-20 00:00:00,Student Organization,Entertainment,-30.0,USD,3851.6,completed,Student Union,Cambridge,debit
+TX1080,ACC013,2025-03-18 00:00:00,Campus Dining,Food & Dining,-25.5,USD,3881.6,completed,University Cafeteria,Cambridge,debit
+TX1081,ACC017,2025-03-20 00:00:00,Sporting Equipment,Shopping,-45.99,USD,912.23,completed,Sports Store,Boston,debit
+TX1082,ACC017,2025-03-18 00:00:00,School Supplies,Education,-25.5,USD,958.22,completed,Staples,Boston,debit
+TX1083,ACC001,,Air tickets,Transfers,-100.0,USD,15145.32,completed,Internal Transfer,,transfer
+TX1084,ACC002,,Transfer from Darren Smith,Transfers,100.0,USD,3354.33,completed,Internal Transfer,,transfer
+TX1085,ACC001,,Paella Expenses,Transfers,-50.0,USD,15095.32,completed,Internal Transfer,,transfer
+TX1086,ACC002,,Transfer from Darren Smith,Transfers,50.0,USD,3404.33,completed,Internal Transfer,,transfer
+TX1087,ACC001,,Casino Entrance Fee,Transfers,-130.0,USD,14965.32,completed,Internal Transfer,,transfer
+TX1088,ACC002,,Transfer from Darren Smith,Transfers,130.0,USD,3534.33,completed,Internal Transfer,,transfer
+TX1089,ACC001,,Casino Hotel Expense,Transfers,-220.0,USD,14745.32,completed,Internal Transfer,,transfer
+TX1090,ACC002,,Transfer from Darren Smith,Transfers,220.0,USD,3754.33,completed,Internal Transfer,,transfer
+TX1091,ACC001,,Taxi Expenses,Transfers,-20.0,USD,14725.32,completed,Internal Transfer,,transfer
+TX1092,ACC002,,Transfer from Darren Smith,Transfers,20.0,USD,3774.33,completed,Internal Transfer,,transfer
+TX1093,ACC003,2025-04-05 12:08:08,Burger Expenses,Transfers,-10.5,USD,35200.0,completed,Internal Transfer,,transfer
+TX1094,ACC001,2025-04-05 12:08:08,Transfer from Darren Smith,Transfers,10.5,USD,14735.82,completed,Internal Transfer,,transfer
+TX1095,ACC001,2025-04-05 12:08:34,Dinner Expenses,Transfers,-23.5,USD,14712.32,completed,Internal Transfer,,transfer
+TX1096,ACC003,2025-04-05 12:08:34,Transfer from Darren Smith,Transfers,23.5,USD,35223.5,completed,Internal Transfer,,transfer
+TX1097,ACC001,2025-04-05 13:06:16,School Fees,Transfers,-100.0,USD,14612.32,completed,Internal Transfer,,transfer
+TX1098,ACC009,2025-04-05 13:06:16,Transfer from Darren Smith,Transfers,100.0,USD,2450.45,completed,Internal Transfer,,transfer
+TX1099,ACC007,2025-04-05 16:15:46,Loan from March,Transfers,-100.0,USD,42050.25,completed,Internal Transfer,,transfer
+TX1100,ACC001,2025-04-05 16:15:46,Transfer from Maria Smith,Transfers,100.0,USD,14712.32,completed,Internal Transfer,,transfer
+TX1101,ACC012,2025-04-05 21:49:11,Burger Meal Treat,Transfers,-10.67,USD,12439.63,completed,Internal Transfer,N/A,transfer
+TX1102,ACC002,2025-04-05 21:49:11,Transfer from Enric Smith,Transfers,10.67,USD,3785.0,completed,Internal Transfer,N/A,transfer
