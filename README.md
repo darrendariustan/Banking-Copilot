@@ -68,7 +68,7 @@ If you encounter errors such as:
 Try the following:
 - For missing modules, install them manually (e.g., `pip install cryptography`).
 - If dependency conflicts arise, consider letting pip automatically resolve versions by removing strict version pins (or updating them to known compatible versions).
-- For issues with PyTorch, ensure your Python version matches the required compatibility or upgrade to a supported torch version (e.g., use `torch>=2.4.0` if using Python 3.12).
+- For issues with PyTorch, ensure your Python version matches the required compatibility or upgrade to a supported torch version (e.g., use `torch>=2.4.0` if using Python 3.12). Again from Point 1, it will be best to use Python 3.11.9.
 
 ### 5. Running the Application
 After all dependencies are installed, start your Streamlit app with:
@@ -81,19 +81,16 @@ Your app should now be up and running!
 
 Here are some example queries you can try:
 
-- "What's my account balance?"
-- "Show me my transactions from last week."
-- "When is my next mortgage payment?"
-- "What are my scheduled payments for this month?"
-- "Show me spending by category for the past 30 days."
-- "What's the latest financial news?"
-- "Give me investment advice based on current market trends."
+- "What is my current family mortgage balance?"
+- "What are some areas I can reduce spending on based on my spending analytics?"
+- "How much do I have in my regular savings account?"
+- "Based on my savings balance, what would you recommend me to invest in?"
 
 ## Security Features
 
 - Authentication required to access any banking information
 - Users can only view their own accounts
-- Family mortgage information is only accessible to parents
+- Family mortgage information is only accessible to the Father
 - Session management with auto-logout functionality
 
 ## Troubleshooting
