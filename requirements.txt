@@ -1,3 +1,4 @@
+# python==3.11.9
 streamlit==1.35.0
 streamlit-mic-recorder>=0.0.4
 langchain>=0.0.311
