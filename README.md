@@ -1,4 +1,4 @@
-# AletaBanc Copilot
+# AletaBank Copilot
 
 A secure banking chatbot application built to help customers manage their finances. It provides a voice and text interface to query account information, transactions, scheduled payments, and financial news.
 
@@ -26,17 +26,56 @@ Demo password format: firstname + last 3 digits of the user ID
 
 ## Setup and Deployment
 
-1. Install required packages:
+### 1. Verify Python Version Compatibility
+Before installing packages, **ensure you are using a compatible Python version**:
+- For example, if your project requires `torch==2.1.2`, use Python **3.10** or **3.11**.
+- If you're using Python **3.12** or newer, update your dependencies (e.g., use `torch>=2.4.0`) or downgrade your Python version accordingly.
+- Check your Python version with:
+  ```
+  python --version
+  ```
+### 2. Clone the Repository
+Clone the project repository from GitHub:
+   ```
+   git clone https://github.com/darrendariustan/Banking-Copilot.git
+   cd Banking-Copilot
+   ```
+
+### 3. Create a Virtual Environment
+Create and activate a virtual environment to isolate your project's dependencies:
+- On Windows (PowerShell):
+  ```
+  python -m venv venv
+  .\venv\Scripts\activate
+  ```
+- On macOS/Linux:
+  ```
+  python -m venv venv
+  python3 -m venv venv
+  source venv/bin/activate
+  ```
+
+### 4. Install Dependencies
+Install the required packages using `requirements.txt`: 
    ```
    pip install -r requirements.txt
    ```
+Note:
+If you encounter errors such as:
+- `ModuleNotFoundError: No module named 'cryptography'`
+- or conflicting package versions like for `langchain` and its dependencies
 
-2. Run the application:
+Try the following:
+- For missing modules, install them manually (e.g., `pip install cryptography`).
+- If dependency conflicts arise, consider letting pip automatically resolve versions by removing strict version pins (or updating them to known compatible versions).
+- For issues with PyTorch, ensure your Python version matches the required compatibility or upgrade to a supported torch version (e.g., use `torch>=2.4.0` if using Python 3.12).
+
+### 5. Running the Application
+After all dependencies are installed, start your Streamlit app with:
    ```
    streamlit run app.py
    ```
-
-3. Access the application in your web browser at `http://localhost:8501`
+Your app should now be up and running!
 
 ## Sample Queries
 
