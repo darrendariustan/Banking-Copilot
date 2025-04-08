@@ -2,6 +2,11 @@
 
 A secure banking chatbot application built to help customers manage their finances. It provides a voice and text interface to query account information, transactions, scheduled payments, and financial news.
 
+## LLM Model For Intent Recognition
+1. First Layer: Uses intent embeddings from csv files, combined with sentence transformer methods with the Mini L6 LM v2 Model
+2. Second Layer: If first layer fails, intent recognition is done through pattern recognition via regex matching
+3. Third Layer: As a fallback for general inquiries, the chatbot is also connected to OpenAI and Yahooquery APIs
+
 ## Features
 
 - **User Authentication**: Secure login system to protect user data
