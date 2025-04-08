@@ -5,7 +5,7 @@ A secure banking chatbot application built to help customers manage their financ
 ## LLM Model For Intent Recognition
 1. First Layer: Uses intent embeddings from csv files, combined with sentence transformer methods with the Mini L6 LM v2 Model
 2. Second Layer: If first layer fails, intent recognition is done through pattern recognition via regex matching
-3. Third Layer: As a fallback for general inquiries, the chatbot is also connected to OpenAI and Yahooquery APIs
+3. Third Layer: As a fallback for general inquiries, the chatbot is also connected to OpenAI and Yahooquery APIs (while also relying on its native Mini L6 LM v2 Model)
 
 ## Features
 
