@@ -1,5 +1,7 @@
 # AletaBank Copilot
 
+🚀 **Visit the Live App:** [https://banking-copilot.onrender.com/](https://banking-copilot.onrender.com/)
+
 A secure banking chatbot application built to help customers manage their finances. It provides a voice and text interface to query account information, transactions, scheduled payments, and financial news.
 
 ## LLM Model For Intent Recognition
