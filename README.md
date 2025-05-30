@@ -4,6 +4,14 @@
 
 A secure banking chatbot application built to help customers manage their finances. It provides a voice and text interface to query account information, transactions, scheduled payments, and financial news.
 
+## 🎥 Demo Video
+
+Watch our application in action! Check out the demo video to see the banking copilot's features and capabilities:
+
+📹 **[PDAI_DemoR1.webm](./PDAI_DemoR1.webm)** - Partial walkthrough of the banking copilot functionality
+
+*Note: You can download the video file to view it locally, or view it directly on GitHub.*
+
 ## LLM Model For Intent Recognition
 1. First Layer: Uses intent embeddings from csv files, combined with sentence transformer methods with the Mini L6 LM v2 Model
 2. Second Layer: If first layer fails, intent recognition is done through pattern recognition via regex matching
