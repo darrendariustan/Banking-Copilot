@@ -2,7 +2,7 @@
 
 🚀 **Visit the Live App:** [https://banking-copilot.onrender.com/](https://banking-copilot.onrender.com/) 
 
-Note: The live app might be unstable due to a free backend server on render, it would be strongly recommended to download all files under the Section 'Setup and Deployment' instead. Otherwise watch the demo video below.
+*Note: The live app might be unstable due to a free backend server on render, it would be strongly recommended to download all files under the Section 'Setup and Deployment' instead. Otherwise watch the demo video below.*
 
 A secure banking chatbot application built to help customers manage their finances. It provides a voice and text interface to query account information, transactions, scheduled payments, and financial news.
 
