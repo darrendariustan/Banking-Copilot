@@ -16,6 +16,13 @@ from cryptography.fernet import Fernet
 import logging
 import base64
 
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
+LOGGER = logging.getLogger('BankingApp')
+
 # Load environment variables from .env file
 load_dotenv()
 
@@ -29,22 +36,66 @@ st.set_page_config(
 
 # Function to load and inject custom CSS
 def load_css():
+    # Load the main CSS file
     with open("static/css/login.css", "r") as f:
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+    
+    # Load and encode background image
+    try:
+        image_path = "static/assets/background.jpg"
+        with open(image_path, "rb") as img_file:
+            bg_img_base64 = base64.b64encode(img_file.read()).decode()
         
-    # Add custom CSS for password toggle functionality
+        # Apply background image directly
+        background_style = f"""
+        <style>
+        .stApp {{
+            background-image: linear-gradient(135deg, rgba(0, 0, 10, 0.85), rgba(15, 23, 42, 0.9)), url("data:image/jpeg;base64,{bg_img_base64}") !important;
+            background-size: cover !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+            background-attachment: fixed !important;
+        }}
+        
+        @media (prefers-color-scheme: light) {{
+            .stApp {{
+                background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.85)), url("data:image/jpeg;base64,{bg_img_base64}") !important;
+            }}
+        }}
+        </style>
+        """
+        st.markdown(background_style, unsafe_allow_html=True)
+    except Exception as e:
+        st.sidebar.error(f"Error loading background: {str(e)}")
+    
+    # Now load the theme CSS (without background image handling)
+    with open("static/css/theme.css", "r") as f:
+        theme_css = f.read()
+        st.markdown(f"<style>{theme_css}</style>", unsafe_allow_html=True)
+        
+    # Additional JavaScript for custom styling
     st.markdown("""
-    <style>
-    /* Hide password toggle container by default */
-    div[data-testid="stVerticalBlock"] div.password-toggle-container {
-        position: relative;
-        top: -40px;
-        float: right;
-        margin-right: 10px;
-    }
-    </style>
-    """, unsafe_allow_html=True)
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Add classes to financial elements
+        document.querySelectorAll('td:nth-child(7)').forEach(cell => {
+            if(cell.textContent.trim().toLowerCase() === 'active') {
+                cell.classList.add('status-active');
+            }
+        });
         
+        // Add money formatting classes
+        document.querySelectorAll('td:nth-child(4), td:nth-child(5)').forEach(cell => {
+            cell.classList.add('money-value');
+        });
+        
+        // Ensure theme is applied
+        const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.body.classList.add(isDarkMode ? 'force-dark' : 'force-light');
+    });
+    </script>
+    """, unsafe_allow_html=True)
+
 # Function to get base64 encoding of an image
 def get_image_base64(image_path):
     with open(image_path, "rb") as img_file:

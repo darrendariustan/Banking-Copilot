@@ -1,0 +1,58 @@
+services:
+  # Production service (current working version)
+  - type: web
+    name: banking-copilot-prod
+    env: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    branch: main  # Pin to main branch
+    buildCommand: docker build -t banking-copilot .
+    startCommand: streamlit run app.py --server.port=$PORT --server.address=0.0.0.0 --server.headless=true --server.fileWatcherType=none --browser.gatherUsageStats=false
+    healthCheckPath: /_stcore/health
+    # Set to manual deploy for safety
+    autoDeploy: false  # This prevents automatic deployments
+    envVars:
+      - key: PORT
+        value: 8501
+      - key: PYTHONPATH
+        value: /app
+      - key: STREAMLIT_SERVER_HEADLESS
+        value: true
+      - key: STREAMLIT_SERVER_ENABLE_CORS
+        value: false
+      - key: STREAMLIT_SERVER_ENABLE_XSRF_PROTECTION
+        value: false
+    # Add your environment variables from .env here
+    # Example:
+    # - key: OPENAI_API_KEY
+    #   sync: false  # This will be set in Render dashboard
+    disk:
+      name: data-disk-prod
+      mountPath: /app/data
+      sizeGB: 1
+
+  # Staging service for testing Docker changes
+  - type: web
+    name: banking-copilot-staging
+    env: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    branch: main
+    buildCommand: docker build -t banking-copilot-staging .
+    startCommand: streamlit run app.py --server.port=$PORT --server.address=0.0.0.0 --server.headless=true --server.fileWatcherType=none --browser.gatherUsageStats=false
+    healthCheckPath: /_stcore/health
+    envVars:
+      - key: PORT
+        value: 8501
+      - key: PYTHONPATH
+        value: /app
+      - key: STREAMLIT_SERVER_HEADLESS
+        value: true
+      - key: STREAMLIT_SERVER_ENABLE_CORS
+        value: false
+      - key: STREAMLIT_SERVER_ENABLE_XSRF_PROTECTION
+        value: false
+    disk:
+      name: data-disk-staging
+      mountPath: /app/data
+      sizeGB: 1 

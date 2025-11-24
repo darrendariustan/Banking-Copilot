@@ -1,0 +1,55 @@
+# Git
+.git/
+.gitignore
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+
+# Jupyter
+*.ipynb_checkpoints/
+*.ipynb
+
+# Logs
+*.log
+logs/
+
+# Audio files (these are generated at runtime)
+*.wav
+*.mp3
+
+# Cache
+cache/
+
+# Documentation
+README.md
+*.pdf
+
+# Demo files
+*.webm
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+
+# Environment files (should never be in container)
+.env
+.env.local
+.env.*.local
+*.env 

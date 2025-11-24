@@ -1,0 +1,333 @@
+/* Color Variables - Core Banking Theme */
+:root {
+    /* Light mode colors */
+    --primary-light: #FFFFFF;
+    --secondary-light: #F5F7FA;
+    --accent-blue: #3B82F6;
+    --accent-teal: #14B8A6;
+    --accent-gold: #F59E0B;
+    --text-dark: #1E293B;
+    --text-medium-light: #475569;
+    --text-dim-light: #64748B;
+    --border-dark: rgba(0, 0, 0, 0.1);
+    --success-green: #10B981;
+    --warning-orange: #F97316;
+    --danger-red: #EF4444;
+    --card-light: #FFFFFF;
+    --card-shadow: rgba(0, 0, 0, 0.05);
+    
+    /* Dark mode colors */
+    --primary-dark: #0F1117;
+    --secondary-dark: #1E1E2E;
+    --text-light: rgba(255, 255, 255, 0.95);
+    --text-medium-dark: rgba(255, 255, 255, 0.75);
+    --text-dim-dark: rgba(255, 255, 255, 0.5);
+    --border-light: rgba(255, 255, 255, 0.15);
+    --glass-dark: rgba(25, 25, 35, 0.85);
+    --card-dark: rgba(30, 30, 46, 0.6);
+    
+    /* Default theme (auto-detected) */
+    --primary-bg: var(--primary-light);
+    --secondary-bg: var(--secondary-light);
+    --text-primary: var(--text-dark);
+    --text-secondary: var(--text-medium-light);
+    --text-tertiary: var(--text-dim-light);
+    --border-color: var(--border-dark);
+    --card-bg: var(--card-light);
+    --card-border: var(--border-dark);
+    --overlay-bg: rgba(255, 255, 255, 0.7);
+    --sidebar-bg: var(--secondary-light);
+    --input-bg: var(--primary-light);
+}
+
+/* Dark mode detection and variables */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-bg: var(--primary-dark);
+        --secondary-bg: var(--secondary-dark);
+        --text-primary: var(--text-light);
+        --text-secondary: var(--text-medium-dark);
+        --text-tertiary: var(--text-dim-dark);
+        --border-color: var(--border-light);
+        --card-bg: var(--card-dark);
+        --card-border: var(--border-light);
+        --overlay-bg: var(--glass-dark);
+        --sidebar-bg: var(--primary-dark);
+        --input-bg: var(--secondary-dark);
+    }
+}
+
+/* Password toggle container styling */
+div[data-testid="stVerticalBlock"] div.password-toggle-container {
+    position: relative;
+    top: -40px;
+    float: right;
+    margin-right: 10px;
+}
+
+/* Main background - will be dynamically updated with the background image */
+.stApp {
+    /* Base styling only - no background image here */
+    background-color: var(--primary-bg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: var(--text-primary);
+}
+
+/* Container styling */
+.block-container {
+    background-color: var(--card-bg) !important;
+    border-radius: 12px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 4px 20px var(--card-shadow);
+    border: 1px solid var(--border-color);
+}
+
+/* Sidebar styling */
+section[data-testid="stSidebar"] .block-container {
+    background-color: var(--sidebar-bg) !important;
+    border-right: 1px solid var(--border-color);
+    border-radius: 0px;
+}
+
+/* Text styling */
+.stMarkdown, p, .stTextInput label, .stSelectbox label {
+    color: var(--text-secondary) !important;
+}
+
+/* Headings styling */
+h1, h2, h3 {
+    color: var(--text-primary) !important;
+    font-weight: 600 !important;
+}
+
+h4, h5, h6 {
+    color: var(--accent-blue) !important;
+    font-weight: 500 !important;
+}
+
+/* Dashboard tab styling */
+button[data-baseweb="tab"] {
+    background-color: transparent !important;
+    color: var(--text-tertiary) !important;
+    border-bottom: 2px solid transparent !important;
+    transition: all 0.2s ease;
+}
+
+button[data-baseweb="tab"][aria-selected="true"] {
+    background-color: transparent !important;
+    color: var(--accent-blue) !important;
+    border-bottom: 2px solid var(--accent-blue) !important;
+    font-weight: 500 !important;
+}
+
+/* Financial metrics styling */
+.metric-positive, span:contains("+"), div:contains("+") {
+    color: var(--success-green) !important;
+    font-weight: 500;
+}
+
+.metric-negative, span:contains("-"), div:contains("-") {
+    color: var(--danger-red) !important;
+    font-weight: 500;
+}
+
+/* Market numbers styling */
+[data-testid="stMetricValue"] + [data-testid="stMetricDelta"] svg {
+    display: none;
+}
+
+[data-testid="stMetricDelta"] [data-testid="stText"] {
+    font-size: 0.8em;
+}
+
+/* Table styling */
+div[data-testid="stTable"] {
+    background-color: var(--card-bg) !important;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+div[data-testid="stTable"] th {
+    background-color: var(--secondary-bg) !important;
+    color: var(--text-primary) !important;
+    font-weight: 500;
+    border-bottom: 1px solid var(--border-color);
+    text-transform: uppercase;
+    font-size: 0.85em;
+    letter-spacing: 0.5px;
+}
+
+div[data-testid="stTable"] td {
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-secondary);
+}
+
+/* Status indicators */
+.status-active {
+    color: var(--success-green);
+    font-weight: 500;
+}
+
+/* Button styling */
+button[kind="primary"], button[data-testid="StyledFullScreenButton"] {
+    background-color: var(--accent-blue) !important;
+    border: none !important;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    color: white !important;
+}
+
+button[kind="primary"]:hover, button[data-testid="StyledFullScreenButton"]:hover {
+    background-color: rgba(59, 130, 246, 0.8) !important;
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+}
+
+button[kind="secondary"] {
+    background-color: var(--secondary-bg) !important;
+    border: 1px solid var(--border-color) !important;
+    color: var(--text-primary) !important;
+}
+
+/* Input field styling */
+input, select, textarea, [data-baseweb="input"] {
+    background-color: var(--input-bg) !important;
+    border: 1px solid var(--border-color) !important;
+    color: var(--text-primary) !important;
+    border-radius: 6px !important;
+}
+
+/* Focus effects */
+input:focus, select:focus, textarea:focus {
+    border-color: var(--accent-blue) !important;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2) !important;
+}
+
+/* Login container */
+.login-container {
+    background-color: var(--card-bg) !important;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 6px 25px var(--card-shadow);
+    border: 1px solid var(--border-color);
+}
+
+/* Logo styling */
+.login-logo {
+    filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.2));
+}
+
+/* Account balance styling */
+.account-balance {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* Sidebar title */
+.sidebar-title {
+    color: var(--accent-blue) !important;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* Money values */
+.money-value {
+    font-family: 'Roboto Mono', monospace;
+    letter-spacing: 0.5px;
+}
+
+/* Chat interface */
+.chat-message {
+    border-radius: 10px;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    max-width: 80%;
+}
+
+.user-message {
+    background-color: rgba(59, 130, 246, 0.2);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    margin-left: auto;
+}
+
+.bot-message {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    margin-right: auto;
+}
+
+/* Chat input area */
+[data-testid="stForm"] {
+    background-color: var(--input-bg) !important;
+    border-radius: 8px;
+    padding: 8px;
+    border: 1px solid var(--border-color);
+}
+
+/* Text input styling */
+.stTextInput > div {
+    background-color: var(--input-bg) !important;
+}
+
+/* Button color */
+.stButton button {
+    background-color: var(--accent-blue) !important;
+    color: white !important;
+}
+
+/* Chart styling */
+[data-testid="stVegaLiteChart"] {
+    background-color: var(--card-bg) !important;
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+}
+
+/* Chart colors */
+:root .vega-embed {
+    --vega-accent-color: var(--accent-blue);
+    --vega-hovering-color: var(--accent-teal);
+}
+
+/* Pie chart colors */
+g[fill="#1E88E5"] {
+    fill: var(--accent-blue) !important;
+}
+
+g[fill="#FFC107"] {
+    fill: var(--accent-gold) !important;
+}
+
+/* Force dark mode regardless of system settings */
+.force-dark {
+    --primary-bg: var(--primary-dark) !important;
+    --secondary-bg: var(--secondary-dark) !important;
+    --text-primary: var(--text-light) !important;
+    --text-secondary: var(--text-medium-dark) !important;
+    --text-tertiary: var(--text-dim-dark) !important;
+    --border-color: var(--border-light) !important;
+    --card-bg: var(--card-dark) !important;
+    --card-border: var(--border-light) !important;
+    --overlay-bg: var(--glass-dark) !important;
+    --sidebar-bg: var(--primary-dark) !important;
+    --input-bg: var(--secondary-dark) !important;
+}
+
+/* Force light mode regardless of system settings */
+.force-light {
+    --primary-bg: var(--primary-light) !important;
+    --secondary-bg: var(--secondary-light) !important;
+    --text-primary: var(--text-dark) !important;
+    --text-secondary: var(--text-medium-light) !important;
+    --text-tertiary: var(--text-dim-light) !important;
+    --border-color: var(--border-dark) !important;
+    --card-bg: var(--card-light) !important;
+    --card-border: var(--border-dark) !important;
+    --overlay-bg: rgba(255, 255, 255, 0.7) !important;
+    --sidebar-bg: var(--secondary-light) !important;
+    --input-bg: var(--primary-light) !important;
+}

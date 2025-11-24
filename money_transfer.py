@@ -6,12 +6,13 @@ from datetime import datetime
 import re
 import random
 
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    filename='transfer.log'
-)
+# Configure logging - only if not already configured
+if not logging.getLogger().handlers:
+    logging.basicConfig(
+        level=logging.INFO,
+        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+        filename='transfer.log'
+    )
 LOGGER = logging.getLogger('money_transfer')
 
 class MoneyTransfer:
@@ -21,8 +22,8 @@ class MoneyTransfer:
         """Initialize with data directory path."""
         if data_dir is None:
             # Try multiple approaches to find the data directory
-            # First, try the original approach
-            possible_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'data')
+            # First, try relative to the current file's directory
+            possible_path = os.path.join(os.path.dirname(__file__), 'data')
             
             # If that doesn't work, try a direct path relative to current directory
             if not os.path.exists(possible_path):

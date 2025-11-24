@@ -11,13 +11,78 @@ __pycache__/
 
 # Ignore editor configs
 .vscode/
+.idea/
 
 # Ignore logs
 *.log
+logs/
 
 # Ignore audio or binary files
 *.wav
+*.mp3
+response.wav
+
+# Ignore cache files (runtime generated)
+cache/
+*.pkl
+
+# Ignore personal tracking/documentation files
+FIXES_APPLIED.md
+deployment-checklist.md
 
 # Ignore OS junk
 .DS_Store
 Thumbs.db
+
+# Ignore temporary files
+*.tmp
+*.temp
+
+# Ignore home directory files (if git is accidentally initialized there)
+AppData/
+OneDrive/
+.Rprofile
+.afirma/
+.anaconda/
+.chocolatey/
+.claude/
+.codeium/
+.conda/
+.cursor/
+.docker/
+.gemini/
+.ipython/
+.keras/
+.matplotlib/
+.pyenv/
+.spyder-py3/
+.ssh/
+.streamlit/
+.vscode/
+.wdm/
+.windsurf/
+Contacts/
+CrossDevice/
+Desktop/
+Downloads/
+Favorites/
+Intro_to_R/
+Jedi/
+Links/
+Music/
+NTUSER.DAT
+Python101course/
+RStudio/
+Saved Games/
+Searches/
+Videos/
+ado/
+anaconda3/
+darrendarius/
+example.txt
+modules.txt
+mysite/
+ntuser.dat.LOG*
+ntuser.ini
+rtools44/
+streamlit_env/

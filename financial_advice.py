@@ -10,18 +10,18 @@ from yahooquery import Ticker
 import time
 import os
 from openai import OpenAI
-import sys
 import re
 from audio_utils import text_to_speech, transcribe_audio
 from streamlit_mic_recorder import mic_recorder
 from langchain.memory import ConversationBufferWindowMemory
 
-# Set up logging
-logging.basicConfig(
-    filename='financial_advice.log',
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-)
+# Set up logging - only if not already configured
+if not logging.getLogger().handlers:
+    logging.basicConfig(
+        filename='financial_advice.log',
+        level=logging.INFO,
+        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+    )
 LOGGER = logging.getLogger('FinancialAdvice')
 
 class FinancialAdvice:

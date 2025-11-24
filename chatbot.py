@@ -1,13 +1,26 @@
-from langchain.chains import LLMChain
-from langchain.prompts import PromptTemplate
-from langchain_openai import ChatOpenAI
-from langchain.memory import ConversationBufferWindowMemory
+# Import langchain components with error handling for compatibility
+try:
+    from langchain.chains import LLMChain
+    from langchain.prompts import PromptTemplate
+    from langchain.memory import ConversationBufferWindowMemory
+except ImportError as e:
+    # Try alternative import paths for newer versions
+    try:
+        from langchain.chains.llm import LLMChain
+        from langchain.prompts.prompt import PromptTemplate
+        from langchain.memory.buffer_window import ConversationBufferWindowMemory
+    except ImportError:
+        raise ImportError(f"Could not import required langchain components: {e}. Please check your langchain installation.")
+
+try:
+    from langchain_openai import ChatOpenAI
+except ImportError as e:
+    raise ImportError(f"Could not import ChatOpenAI: {e}. Please install langchain-openai package.")
 from sentence_transformers import SentenceTransformer
 import pandas as pd
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
 import os
-import datetime
 import re
 import requests
 from datetime import datetime, timedelta
@@ -20,11 +33,13 @@ import streamlit as st
 from openai import OpenAI
 
 # Set up logging at the module level instead of per instance
-logging.basicConfig(
-    filename='chatbot.log',
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-)
+# Only configure if not already configured (prevents conflicts with other modules)
+if not logging.getLogger().handlers:
+    logging.basicConfig(
+        filename='chatbot.log',
+        level=logging.INFO,
+        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+    )
 LOGGER = logging.getLogger('BankingChatbot')
 
 @st.cache_resource
