@@ -461,8 +461,9 @@ def main():
     if backup_key not in st.session_state:
         st.session_state[backup_key] = []
     
-    # Initialize ChatBot instance with current user ID using cached function
-    chatbot = get_chatbot_instance(user_id=st.session_state.current_user_id, user_fullname=st.session_state.user_fullname)
+    # Initialize ChatBot instance lazily - only when actually needed
+    # This prevents slow ML model loading from blocking page load
+    chatbot = None  # Will be initialized when first message is processed
     
     # After user is authenticated, add sidebar menu
     if "authenticated" in st.session_state and st.session_state.authenticated:
@@ -591,6 +592,10 @@ def main():
             # Handling voice recording input
             if voice_recording:
                 try:
+                    # Initialize chatbot lazily on first use
+                    if chatbot is None:
+                        chatbot = get_chatbot_instance(user_id=st.session_state.current_user_id, user_fullname=st.session_state.user_fullname)
+                    
                     # Prevent multiple runs of the same message
                     current_time = time.time()
                     if current_time - st.session_state.last_run_timestamp < 0.5:
@@ -795,6 +800,10 @@ def main():
             # Handling text input
             if st.session_state.send_input and st.session_state.user_question:
                 try:
+                    # Initialize chatbot lazily on first use
+                    if chatbot is None:
+                        chatbot = get_chatbot_instance(user_id=st.session_state.current_user_id, user_fullname=st.session_state.user_fullname)
+                    
                     # Prevent multiple runs of the same message
                     current_time = time.time()
                     if current_time - st.session_state.last_run_timestamp < 0.5:
