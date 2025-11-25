@@ -607,6 +607,7 @@ def main():
                         st.session_state.debug_transcription = f"Transcribed text: {transcribed_text}"
                     else:
                         st.session_state.debug_transcription = "Transcription failed or returned empty"
+                        st.session_state.send_input = False  # Reset to prevent continuous reruns
                         st.rerun()
                         return
                         
@@ -616,6 +617,7 @@ def main():
                     # Skip if this exact message has already been processed recently
                     if message_hash in st.session_state.processed_messages:
                         st.session_state.debug_transcription += " (Skipped - duplicate message)"
+                        st.session_state.send_input = False  # Reset to prevent continuous reruns
                         st.rerun()
                         return
                         
@@ -754,12 +756,17 @@ def main():
                     # Store the current menu selection before rerun
                     st.session_state.selected_menu = selected_menu
                     
+                    # Reset send_input to prevent continuous reruns
+                    st.session_state.send_input = False
+                    
                     st.rerun()
                 except Exception as e:
                     st.error(f"Error processing audio: {e}")
                 finally:
                     # Always ensure processing_message is reset
                     st.session_state.processing_message = False
+                    # Reset send_input even on error
+                    st.session_state.send_input = False
             
             # Display debug info if it exists
             if st.session_state.get('debug_audio') or st.session_state.get('debug_transcription'):
@@ -787,6 +794,7 @@ def main():
                     # Skip if this exact message has already been processed recently
                     if message_hash in st.session_state.processed_messages:
                         st.session_state.user_question = ""  # Still clear the input
+                        st.session_state.send_input = False  # Reset send_input to prevent reruns
                         return
                         
                     # Add to processed messages to prevent looping
@@ -981,12 +989,19 @@ def main():
                     # Store the current menu selection before rerun
                     st.session_state.selected_menu = selected_menu
                     
+                    # Reset send_input and user_question to prevent continuous reruns
+                    st.session_state.send_input = False
+                    st.session_state.user_question = ""
+                    
                     st.rerun()
                 except Exception as e:
                     st.error(f"Error processing message: {e}")
                 finally:
                     # Always ensure processing_message is reset
                     st.session_state.processing_message = False
+                    # Reset send_input even on error
+                    st.session_state.send_input = False
+                    st.session_state.user_question = ""
 
         # Get the selected menu from session state if available (to preserve during reruns)
         if "selected_menu" in st.session_state:
