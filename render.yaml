@@ -12,8 +12,7 @@ services:
     # Set to manual deploy for safety
     autoDeploy: false  # This prevents automatic deployments
     envVars:
-      - key: PORT
-        value: 8501
+      # PORT is automatically set by Render - do not override it
       - key: PYTHONPATH
         value: /app
       - key: STREAMLIT_SERVER_HEADLESS
@@ -42,8 +41,7 @@ services:
     startCommand: streamlit run app.py --server.port=$PORT --server.address=0.0.0.0 --server.headless=true --server.fileWatcherType=none --browser.gatherUsageStats=false
     healthCheckPath: /_stcore/health
     envVars:
-      - key: PORT
-        value: 8501
+      # PORT is automatically set by Render - do not override it
       - key: PYTHONPATH
         value: /app
       - key: STREAMLIT_SERVER_HEADLESS
