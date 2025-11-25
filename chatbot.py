@@ -337,8 +337,7 @@ class IntentAnalyzer:
 @st.cache_data(ttl=3600)  # Cache for 1 hour
 def load_banking_data():
     """Cached loading of banking datasets from CSV files."""
-    # Go up one level from modules/ to root, then to data/
-    data_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'data')
+    data_dir = os.path.join(os.path.dirname(__file__), 'data')
     try:
         # Load CSVs with explicit paths for clarity
         transactions = pd.read_csv(os.path.join(data_dir, 'transaction_history.csv'))
@@ -401,8 +400,11 @@ class ChatBot:
         """Initialize the intent classifier based on embeddings."""
         # Load embeddings for intent classification
         try:
-            # Use cached sentence transformer for better performance
-            self.model = get_sentence_transformer()
+            from sentence_transformers import SentenceTransformer
+            
+            # Load the pre-trained model
+            model_name = 'all-MiniLM-L6-v2'
+            self.model = SentenceTransformer(model_name)
             
             # Load intent data and embeddings with robust error handling
             try:

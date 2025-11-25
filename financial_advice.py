@@ -11,7 +11,7 @@ import time
 import os
 from openai import OpenAI
 import re
-from modules.audio_utils import text_to_speech, transcribe_audio
+from audio_utils import text_to_speech, transcribe_audio
 from streamlit_mic_recorder import mic_recorder
 from langchain.memory import ConversationBufferWindowMemory
 
@@ -684,40 +684,10 @@ Important guidelines:
             
             # Process voice recording if available
             if voice_recording:
-                # Rate limiting: prevent multiple runs of the same message
-                current_time = time.time()
-                last_run_key = "financial_advice_last_run"
-                if last_run_key in st.session_state:
-                    if current_time - st.session_state[last_run_key] < 0.5:
-                        # Clear voice_recording to prevent reprocessing
-                        if 'financial_advice_voice' in st.session_state:
-                            del st.session_state['financial_advice_voice']
-                        return
-                st.session_state[last_run_key] = current_time
-                
                 # Transcribe the audio
                 transcribed_text = transcribe_audio(voice_recording)
                 
-                # Clear voice_recording widget after reading to prevent reprocessing
-                if 'financial_advice_voice' in st.session_state:
-                    del st.session_state['financial_advice_voice']
-                
                 if transcribed_text:
-                    # Duplicate detection: check if this message was already processed
-                    processed_key = "financial_advice_processed"
-                    if processed_key not in st.session_state:
-                        st.session_state[processed_key] = set()
-                    
-                    message_hash = f"{transcribed_text}:{user_id}"
-                    if message_hash in st.session_state[processed_key]:
-                        # Skip duplicate message
-                        return
-                    st.session_state[processed_key].add(message_hash)
-                    
-                    # Limit size of processed messages set
-                    if len(st.session_state[processed_key]) > 20:
-                        st.session_state[processed_key] = set(list(st.session_state[processed_key])[-10:])
-                    
                     # Add user message to chat history
                     st.session_state.financial_advice_messages.append({"role": "user", "content": transcribed_text})
                     
@@ -736,36 +706,9 @@ Important guidelines:
                     
                     # Force a rerun to show the audio player
                     st.rerun()
-                else:
-                    # Transcription failed - clear widget and return
-                    if 'financial_advice_voice' in st.session_state:
-                        del st.session_state['financial_advice_voice']
         
         # Process text input
         if user_input:
-            # Rate limiting: prevent multiple runs
-            current_time = time.time()
-            last_run_key = "financial_advice_last_run"
-            if last_run_key in st.session_state:
-                if current_time - st.session_state[last_run_key] < 0.5:
-                    return
-            st.session_state[last_run_key] = current_time
-            
-            # Duplicate detection: check if this message was already processed
-            processed_key = "financial_advice_processed"
-            if processed_key not in st.session_state:
-                st.session_state[processed_key] = set()
-            
-            message_hash = f"{user_input}:{user_id}"
-            if message_hash in st.session_state[processed_key]:
-                # Skip duplicate message
-                return
-            st.session_state[processed_key].add(message_hash)
-            
-            # Limit size of processed messages set
-            if len(st.session_state[processed_key]) > 20:
-                st.session_state[processed_key] = set(list(st.session_state[processed_key])[-10:])
-            
             # Add user message to chat history
             st.session_state.financial_advice_messages.append({"role": "user", "content": user_input})
             

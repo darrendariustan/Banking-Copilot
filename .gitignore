@@ -26,7 +26,7 @@ response.wav
 cache/
 *.pkl
 
-# Ignore entire docs/ folder (all documentation except README.md)
+# Ignore all documentation files
 docs/
 
 # Ignore OS junk

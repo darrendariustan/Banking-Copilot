@@ -22,8 +22,8 @@ class MoneyTransfer:
         """Initialize with data directory path."""
         if data_dir is None:
             # Try multiple approaches to find the data directory
-            # First, try relative to the current file's directory
-            possible_path = os.path.join(os.path.dirname(__file__), 'data')
+            # First, try going up one level from modules/ to root, then to data/
+            possible_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'data')
             
             # If that doesn't work, try a direct path relative to current directory
             if not os.path.exists(possible_path):

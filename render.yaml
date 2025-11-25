@@ -3,10 +3,10 @@ services:
   - type: web
     name: banking-copilot-prod
     env: docker
-    dockerfilePath: ./config/Dockerfile
+    dockerfilePath: ./Dockerfile
     plan: free
     branch: main  # Pin to main branch
-    buildCommand: docker build -t banking-copilot -f config/Dockerfile .
+    buildCommand: docker build -t banking-copilot .
     startCommand: streamlit run app.py --server.port=$PORT --server.address=0.0.0.0 --server.headless=true --server.fileWatcherType=none --browser.gatherUsageStats=false
     healthCheckPath: /_stcore/health
     # Set to manual deploy for safety
@@ -34,10 +34,10 @@ services:
   - type: web
     name: banking-copilot-staging
     env: docker
-    dockerfilePath: ./config/Dockerfile
+    dockerfilePath: ./Dockerfile
     plan: free
     branch: main
-    buildCommand: docker build -t banking-copilot-staging -f config/Dockerfile .
+    buildCommand: docker build -t banking-copilot-staging .
     startCommand: streamlit run app.py --server.port=$PORT --server.address=0.0.0.0 --server.headless=true --server.fileWatcherType=none --browser.gatherUsageStats=false
     healthCheckPath: /_stcore/health
     envVars:
