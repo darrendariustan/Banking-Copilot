@@ -113,9 +113,6 @@ def display_image_html(image_path, width="200px", class_name=""):
     img_html = f'<img src="data:image/png;base64,{img_base64}" width="{width}" class="{class_name}">'
     return img_html
 
-# Apply CSS at the start
-load_css()
-
 # Extend session state expiration (by default it's 60 minutes)
 if "session_start_time" not in st.session_state:
     st.session_state.session_start_time = time.time()
@@ -408,6 +405,11 @@ def initialize_session_state():
             st.session_state[var] = default
 
 def main():
+    # Load CSS once per session
+    if "css_loaded" not in st.session_state:
+        load_css()
+        st.session_state.css_loaded = True
+    
     # Set app title
     st.title("AletaBanc Copilot")
     
