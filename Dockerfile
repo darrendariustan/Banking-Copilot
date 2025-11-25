@@ -31,8 +31,9 @@ RUN useradd --create-home --shell /bin/bash app \
 USER app
 
 # Expose port (Render will set PORT env var dynamically)
-# Note: EXPOSE requires a numeric value at build time, but Render will use the PORT env var at runtime
-EXPOSE 8501
+# Note: EXPOSE is just documentation - Render uses the PORT env var at runtime
+# Using 10000 as default since that's what Render typically uses
+EXPOSE 10000
 
 # Health check for Render (PORT is set by Render at runtime)
 # Note: Health check is handled by Render's healthCheckPath, this is a fallback
