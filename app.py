@@ -37,8 +37,11 @@ st.set_page_config(
 # Function to load and inject custom CSS
 def load_css():
     # Load the main CSS file
-    with open("static/css/login.css", "r") as f:
-        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+    try:
+        with open("static/css/login.css", "r") as f:
+            st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+    except Exception as e:
+        LOGGER.warning(f"Could not load login.css: {str(e)}")
     
     # Load and encode background image
     try:
@@ -66,12 +69,15 @@ def load_css():
         """
         st.markdown(background_style, unsafe_allow_html=True)
     except Exception as e:
-        st.sidebar.error(f"Error loading background: {str(e)}")
+        LOGGER.warning(f"Error loading background: {str(e)}")
     
     # Now load the theme CSS (without background image handling)
-    with open("static/css/theme.css", "r") as f:
-        theme_css = f.read()
-        st.markdown(f"<style>{theme_css}</style>", unsafe_allow_html=True)
+    try:
+        with open("static/css/theme.css", "r") as f:
+            theme_css = f.read()
+            st.markdown(f"<style>{theme_css}</style>", unsafe_allow_html=True)
+    except Exception as e:
+        LOGGER.warning(f"Could not load theme.css: {str(e)}")
         
     # Additional JavaScript for custom styling
     st.markdown("""

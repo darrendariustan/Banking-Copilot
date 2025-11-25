@@ -22,8 +22,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy application code
 COPY . .
 
-# Create cache directory
-RUN mkdir -p cache
+# Create cache and data directories
+RUN mkdir -p cache data
 
 # Create non-root user for security
 RUN useradd --create-home --shell /bin/bash app \
@@ -40,5 +40,6 @@ EXPOSE 10000
 HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
     CMD curl --fail http://localhost:${PORT:-10000}/_stcore/health || exit 1
 
-# Run the application (PORT will be set by Render)
-CMD streamlit run app.py --server.port=${PORT:-8501} --server.address=0.0.0.0 --server.headless=true --server.fileWatcherType=none --browser.gatherUsageStats=false 
+# Run the application (PORT will be set by Render via dockerCommand override)
+# This CMD is overridden by Render's dockerCommand, but kept as fallback
+CMD streamlit run app.py --server.port=${PORT:-10000} --server.address=0.0.0.0 --server.headless=true --server.fileWatcherType=none --browser.gatherUsageStats=false 
