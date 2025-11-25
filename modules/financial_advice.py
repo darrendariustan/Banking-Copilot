@@ -11,7 +11,7 @@ import time
 import os
 from openai import OpenAI
 import re
-from audio_utils import text_to_speech, transcribe_audio
+from modules.audio_utils import text_to_speech, transcribe_audio
 from streamlit_mic_recorder import mic_recorder
 from langchain.memory import ConversationBufferWindowMemory
 

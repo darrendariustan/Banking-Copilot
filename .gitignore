@@ -26,9 +26,8 @@ response.wav
 cache/
 *.pkl
 
-# Ignore personal tracking/documentation files
-FIXES_APPLIED.md
-deployment-checklist.md
+# Ignore entire docs/ folder (all documentation except README.md)
+docs/
 
 # Ignore OS junk
 .DS_Store

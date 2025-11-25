@@ -372,8 +372,8 @@ def load_banking_data():
 @st.cache_data(ttl=3600)  # Cache for 1 hour
 def load_nlp_data():
     """Cached loading of all NLP-related data (intents and embeddings)"""
-    intent_data = pd.read_csv('intent.csv')
-    embeddings = pd.read_csv('intent_embeddings.csv')
+    intent_data = pd.read_csv('data/intent.csv')
+    embeddings = pd.read_csv('data/intent_embeddings.csv')
     LOGGER.info(f"Cached NLP data: {len(intent_data)} intents, {embeddings.shape} embeddings")
     return {
         'intent_data': intent_data,
@@ -400,25 +400,22 @@ class ChatBot:
         """Initialize the intent classifier based on embeddings."""
         # Load embeddings for intent classification
         try:
-            from sentence_transformers import SentenceTransformer
-            
-            # Load the pre-trained model
-            model_name = 'all-MiniLM-L6-v2'
-            self.model = SentenceTransformer(model_name)
+            # Use cached sentence transformer for better performance
+            self.model = get_sentence_transformer()
             
             # Load intent data and embeddings with robust error handling
             try:
                 # Try loading with default parameters first
-                self.intent_data = pd.read_csv("intent.csv")
+                self.intent_data = pd.read_csv("data/intent.csv")
             except pd.errors.ParserError as e:
                 # If parsing error occurs, try with error handling mode
                 logging.warning(f"CSV parsing error, attempting recovery: {str(e)}")
                 # Use on_bad_lines parameter for newer pandas versions
                 try:
-                    self.intent_data = pd.read_csv("intent.csv", on_bad_lines='skip')
+                    self.intent_data = pd.read_csv("data/intent.csv", on_bad_lines='skip')
                 except TypeError:
                     # Fall back to older parameter names for backwards compatibility
-                    self.intent_data = pd.read_csv("intent.csv", error_bad_lines=False, warn_bad_lines=True)
+                    self.intent_data = pd.read_csv("data/intent.csv", error_bad_lines=False, warn_bad_lines=True)
                 
                 # If still empty, try different approach
                 if self.intent_data.empty:
@@ -427,7 +424,7 @@ class ChatBot:
                     import csv
                     rows = []
                     try:
-                        with open("intent.csv", 'r', encoding='utf-8') as f:
+                        with open("data/intent.csv", 'r', encoding='utf-8') as f:
                             reader = csv.reader(f)
                             header = next(reader)  # Get header
                             for i, row in enumerate(reader, 2):  # Start from line 2
@@ -465,9 +462,9 @@ class ChatBot:
             
             # Load pre-computed embeddings if available
             embeddings_loaded = False
-            if os.path.exists("intent_embeddings.csv"):
+            if os.path.exists("data/intent_embeddings.csv"):
                 try:
-                    embedded_data = pd.read_csv("intent_embeddings.csv")
+                    embedded_data = pd.read_csv("data/intent_embeddings.csv")
                     # Verify dimensions match our intent data
                     if len(embedded_data) == len(self.intent_texts):
                         self.intent_embeddings = embedded_data.values
@@ -484,7 +481,7 @@ class ChatBot:
                 self.intent_embeddings = self.model.encode(self.intent_texts)
                 
                 # Save embeddings for future use
-                pd.DataFrame(self.intent_embeddings).to_csv("intent_embeddings.csv", index=False)
+                pd.DataFrame(self.intent_embeddings).to_csv("data/intent_embeddings.csv", index=False)
                 
             logging.info("Intent classifier initialized successfully")
         except Exception as e:
