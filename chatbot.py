@@ -16,7 +16,8 @@ try:
     from langchain_openai import ChatOpenAI
 except ImportError as e:
     raise ImportError(f"Could not import ChatOpenAI: {e}. Please install langchain-openai package.")
-from sentence_transformers import SentenceTransformer
+# Lazy import - only import when needed to avoid slow startup
+# from sentence_transformers import SentenceTransformer
 import pandas as pd
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
@@ -45,6 +46,8 @@ LOGGER = logging.getLogger('BankingChatbot')
 @st.cache_resource
 def get_sentence_transformer():
     """Cached loading of sentence transformer model"""
+    # Lazy import to avoid slow startup
+    from sentence_transformers import SentenceTransformer
     model_name = 'all-MiniLM-L6-v2'
     model = SentenceTransformer(model_name)
     return model
