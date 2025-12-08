@@ -12,7 +12,7 @@ Watch our application in action! Check out the demo video to see the banking cop
 
 📹 **[PDAI_DemoR1.webm](./PDAI_DemoR1.webm)** - Partial walkthrough of the banking copilot functionality
 
-**[FULL Demo Available HERE(https://www.youtube.com/watch?v=cp445SYjwxk&t=12s)** - Full Demo
+**[FULL Demo Available - Click HERE](https://www.youtube.com/watch?v=cp445SYjwxk&t=12s)** - Full Demo
 
 *Note: You can download the video file to view it locally, or view it directly on GitHub.*
 
